@@ -1,0 +1,17 @@
+<div class="mainSector">
+  <div class="PIB" [ngClass]="{'highlight': true}" [ngStyle]="{'background-color': '#a9a9a9'}">
+    <h1>П, І, Б:</h1>
+    <h2>{{ profile.fullName | uppercase }}</h2>
+  </div>
+  <div class="contacts">
+    <h2>Contacts:</h2>
+    <div *ngFor="let phone of profile.phones">
+      <p>Number: {{ phone }}</p>
+    </div>
+    <p>Email: {{ profile.email | lowercase }}</p>
+    <p>City: {{ profile.city }}</p>
+    <p>Work Experience: {{ profile.workExperience }}</p>
+    <p>Skills: {{ profile.skills.join(', ') }}</p>
+    <img [src]="profile.imageUrl" alt="Profile Image">
+  </div>
+</div>
